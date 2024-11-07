@@ -1,0 +1,30 @@
+//- Main template for displaying search results
+doctype html
+html
+    head
+        title Películas con la búsqueda #{busqueda}
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='/path/to/your/stylesheet.css') //- Link to an external stylesheet
+    body
+        header
+            h1 Películas encontradas con la búsqueda "#{busqueda}"
+        
+        //- Check if there are films to display
+        if films && films.length > 0
+            ul
+                each film in films
+                    li
+                        div.film-details
+                            h2= film.Title
+                            label Año: #{film.Year}
+                            br
+                            label IMDb ID: #{film.imdbID}
+                            br
+                            img(src=film.Poster, width="200", alt=film.Title)
+        else
+            //- Message if no films were found
+            p No se encontraron películas con el título "#{busqueda}". Intenta con otro título.
+
+        //- Footer for additional information or navigation
+        footer
+            p &copy; 2024 Tu Sitio de Películas. Todos los derechos reservados.

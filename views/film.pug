@@ -1,0 +1,16 @@
+p Películas con la búsqueda #{busqueda}
+
+    h1 Lista de Películas
+
+    ul
+        each film in films
+            li
+                div.film-details
+                    h2= film.Title
+                    label Año: #{film.Year}
+                    label imdbID: #{film.imdbID}
+                    img(src=film.Poster width="200" alt=film.Title)
+
+
+
+                    
